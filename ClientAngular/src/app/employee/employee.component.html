@@ -1,0 +1,58 @@
+<div class="d-flex py-3">
+    <h1>Employee Database</h1>
+    <button type="button" class="ms-3 btn btn-primary" (click)="isAdd=true">Add new</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>NIK</th>
+            <th>Address</th>
+            <th>Job Position</th>
+            <th>Job Title</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of data">
+            <td>
+                {{employee.employee_name}}
+            </td>
+            <td>{{employee.nik}}</td>
+            <td>{{employee.employee_address}}</td>
+            <td>{{employee.position_code}} - {{employee.position_name}}</td>
+            <td>{{employee.title_code}} - {{employee.title_name}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="editEmployee(employee.idemployee)">Edit</button>
+                <button type="button" class="ms-2 btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="isAdd">
+            <td>
+                <input placeholder="Full name" [(ngModel)]="employeeObj.employee_name" />
+            </td>
+            <td>
+                <input placeholder="NIK" [(ngModel)]="employeeObj.nik" />
+            </td>
+            <td>
+                <input placeholder="Address" [(ngModel)]="employeeObj.employee_address" />
+            </td>
+            <td>
+                <select (change)="inputJobPosition($event.target)">
+                    <option value="-1">Choose employee position</option>
+                    <option *ngFor="let position of dataPosition" [value]="position.idposition">
+                        {{position.position_code}} - {{position.position_name}}
+                    </option>
+                </select>
+            </td>
+            <td>
+                {{employeeObj.title_code}} - {{employeeObj.title_name}}
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="addEmployee()">Save</button>
+                <button type="button" class="ms-2 btn btn-secondary" (click)="isAdd=false">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

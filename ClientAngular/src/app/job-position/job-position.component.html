@@ -1,0 +1,60 @@
+<div class="d-flex py-3">
+    <h1>Job Position</h1>
+    <button type="button" class="ms-3 btn btn-primary" (click)="isAdd=true">Add New</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Position Code</th>
+            <th>Position Name</th>
+            <th>Job Title</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let position of data">
+            <td>
+                <p *ngIf="isEdit!=position.idposition">{{position.position_code}}</p>
+                <input *ngIf="isEdit==position.idposition" placeholder="Insert position code" [(ngModel)]="jobPositionObj.position_code"/>
+            </td>
+            <td>
+                <p *ngIf="isEdit!=position.idposition">{{position.position_name}}</p>
+                <input *ngIf="isEdit==position.idposition" placeholder="Insert position name" [(ngModel)]="jobPositionObj.position_name"/>
+            </td>
+            <td>
+                <p *ngIf="isEdit!=position.idposition">{{position.title_code}} - {{position.title_name}}</p>
+                <select *ngIf="isEdit==position.idposition" [(ngModel)]="jobPositionObj.title_id" >
+                    <option *ngFor="let title of dataJobTitle" [value]="title.idtitle">
+                        {{title.title_code}} - {{title.title_name}}
+                    </option>
+                </select>
+            </td>
+            <td>
+                <div *ngIf="isEdit!=position.idposition">
+                    <button class="btn btn-primary" (click)="onEdit(position)">Edit</button>
+                    <button class="btn btn-danger ms-2" (click)="deletePosition(position)">Delete</button>
+                </div>
+                <div *ngIf="isEdit==position.idposition">
+                    <button class="btn btn-success" (click)="editPosition()">Save</button>
+                    <button class="btn btn-secondary ms-2" (click)="cancelEdit()">Cancel</button>
+                </div>
+            </td>
+        </tr>
+        <tr *ngIf="isAdd">
+            <td><input [(ngModel)]="jobPositionObj.position_code" placeholder="Insert position code" /></td>
+            <td><input [(ngModel)]="jobPositionObj.position_name" placeholder="Insert position name" /></td>
+            <td>
+                <select [(ngModel)]="jobPositionObj.title_id">
+                    <option value="-1">Choose job title</option>
+                    <option *ngFor="let title of dataJobTitle" [value]="title.idtitle">
+                        {{title.title_code}} - {{title.title_name}}
+                    </option>
+                </select>
+            </td>
+            <td>
+                <button class="btn btn-success" (click)="addPosition()">Save</button>
+                <button class="btn btn-secondary ms-2" (click)="isAdd=false">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+<div class="d-flex py-3">
+    <h1>Job Title</h1>
+    <button type="button" class="btn btn-primary ms-3" (click)="isAdd = true">Add New</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title Code</th>
+            <th>Title Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let title of data">
+            <!-- Gimana cara biar ngIf-nya 1 aja -->
+            <!-- Gimana biar defaultValuenya keluar -->
+            <td *ngIf="isEdit==title.idtitle">
+                <input placeholder="Insert updated title code" [(ngModel)]="jobTitleObj.title_code" />
+            </td>
+            <td *ngIf="isEdit==title.idtitle">
+                <input placeholder="Insert updated title name" [(ngModel)]="jobTitleObj.title_name" />
+            </td>
+            <td *ngIf="isEdit==title.idtitle">
+                <button type="button" class="btn btn-primary" (click)="editData(jobTitleObj)">Save</button>
+                <button type="button" class="btn btn-danger ms-2" (click)="isEdit=-1">Cancel</button>
+            </td>
+
+            <td *ngIf="isEdit!=title.idtitle">{{title.title_code}}</td>
+            <td *ngIf="isEdit!=title.idtitle">{{title.title_name}}</td>
+            <td *ngIf="isEdit!=title.idtitle">
+                <!-- Gimana cara biar type idtitle di class bisa idtitle?:number bukan idtitle: number = 0 -->
+                <!-- Soalnya, kalau idtitle:number=0 maka inisial value idtitle selalu 0, sedangkan harusnya idtitile itu ngikutin data aslinya -->
+                <button type="button" class="btn btn-primary" (click)="onEdit(title)">Edit</button> 
+                <button type="button" class="btn btn-danger ms-2" (click)="deleteData(title)">Delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="isAdd">
+            <td>
+                <input placeholder="Insert new title code" [(ngModel)]="jobTitleObj.title_code" />
+            </td>
+            <td>
+                <input placeholder="Insert new title name" [(ngModel)]="jobTitleObj.title_name" />
+
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="addData(jobTitleObj)">Save</button>
+                <button type="button" class="btn btn-secondary ms-2" (click)="isAdd=false">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
