@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/exercise/Exercise.csproj": {}
+    "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/servernet6/Exercise.csproj": {}
   },
   "projects": {
-    "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/exercise/Exercise.csproj": {
+    "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/servernet6/Exercise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/exercise/Exercise.csproj",
+        "projectUniqueName": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/servernet6/Exercise.csproj",
         "projectName": "Exercise",
-        "projectPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/exercise/Exercise.csproj",
+        "projectPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/servernet6/Exercise.csproj",
         "packagesPath": "/Users/tika/.nuget/packages/",
-        "outputPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/exercise/obj/",
+        "outputPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/servernet6/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tika/.nuget/NuGet/NuGet.Config"

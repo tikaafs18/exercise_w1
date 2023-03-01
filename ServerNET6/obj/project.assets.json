@@ -1482,11 +1482,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise/Exercise.csproj",
+      "projectUniqueName": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/ServerNET6/Exercise.csproj",
       "projectName": "Exercise",
-      "projectPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise/Exercise.csproj",
+      "projectPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/ServerNET6/Exercise.csproj",
       "packagesPath": "/Users/tika/.nuget/packages/",
-      "outputPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise/obj/",
+      "outputPath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/ServerNET6/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tika/.nuget/NuGet/NuGet.Config"

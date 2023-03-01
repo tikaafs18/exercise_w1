@@ -26,9 +26,9 @@ export class EmployeeComponent implements OnInit {
     this.dataPosition = [];
   }
 
-  inputJobPosition(idposition: any) {
+  inputJobPosition(jobposition: any) {
     this.dataPosition.forEach((val) => {
-      if (val.idposition == idposition.value) {
+      if (val.idposition == jobposition.value) {
         this.employeeObj.position_id = val.idposition;
         this.employeeObj.position_code = val.position_code;
         this.employeeObj.position_name = val.position_name;
@@ -56,14 +56,34 @@ export class EmployeeComponent implements OnInit {
     })
   }
 
-  editEmployee(idemployee: number) {
+  onEdit(employee: Employee) {
+    this.isEdit = employee.idemployee;
+    this.employeeObj = employee;
+  }
+
+  cancelEdit() {
+    this.isEdit = -1;
+    this.employeeObj = new Employee();
+  }
+
+  editEmployee() {
     this.employeeService.editEmployee(this.employeeObj).subscribe(res => {
       this.ngOnInit();
-      this.isEdit = idemployee;
+      this.isEdit = -1;
       alert("Edit employee success");
     }, err => {
       console.log(err);
       alert("Edit employee failed");
+    })
+  }
+
+  deleteEmployee(employee:Employee) {
+    this.employeeService.deleteEmployee(employee).subscribe(res => {
+      this.ngOnInit();
+      alert("Delete employee success");
+    }, err => {
+      console.log(err);
+      alert("Delete employee failed");
     })
   }
 }

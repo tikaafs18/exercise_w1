@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ym0/y80ESYrV/QnLgGHYeB+GFa3896sA+oV58MUVF1+6RMEY4QHw+tWHn35KD5dGmFEmX+AOs8A33S2CA+1STw==",
+  "dgSpecHash": "uFOldVMA7BN8JjfCqrdT0nxpaHtAQ1vEWHclkh/vc0et5fnRvfkgBwF8riKYnuOHvVs4fcETO6n/HDJ2i4EKyQ==",
   "success": true,
-  "projectFilePath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/exercise/Exercise.csproj",
+  "projectFilePath": "/Users/tika/Documents/Work/Andal/On Boarding/W1_Exercise/Exercise_W1/servernet6/Exercise.csproj",
   "expectedPackageFiles": [
     "/Users/tika/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/tika/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
